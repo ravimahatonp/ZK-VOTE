@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-    "scripts": {
+  "scripts": {
     "sync:circuits": "node scripts/sync-circuits.mjs",
     "predev": "npm run sync:circuits",
-    "dev": "vite",
+    "dev": "node init && vite",
     "prebuild": "npm run sync:circuits",
-    "build": "tsc -b && vite build",
+    "build": "node init && tsc -b && vite build",
     "check:idl-drift": "node --experimental-strip-types scripts/check-idl-drift.ts",
     "generate:types": "node --experimental-strip-types scripts/check-idl-drift.ts",
     "lint": "eslint .",
